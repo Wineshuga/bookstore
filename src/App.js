@@ -1,7 +1,6 @@
 import {
   BrowserRouter, Routes, Route, Outlet,
 } from 'react-router-dom';
-import './App.css';
 import BooksPage from './components/BooksPage';
 import Categories from './components/Categories';
 import Header from './components/Header';
