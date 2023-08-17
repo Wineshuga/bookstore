@@ -3,7 +3,7 @@ import { useState } from 'react';
 const AddBook = () => {
   const [book, setBook] = useState({
     bookTitle: '',
-    category: '',
+    author: '',
   });
 
   const handleChange = (e) => {
@@ -15,7 +15,7 @@ const AddBook = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(book.bookTitle + ' ' + book.category);
+    console.log(`${book.bookTitle} ${book.author}`);
   };
 
   return (
@@ -29,18 +29,14 @@ const AddBook = () => {
         value={book.bookTitle}
         onChange={handleChange}
       />
-      <select name="category" id="category" onChange={handleChange}>
-        <option value="" disabled defaultValue={book.category}>Category</option>
-        <option value="Action">Action</option>
-        <option value="Sci-fi">Sci-fi</option>
-        <option value="Romance">Romance</option>
-        <option value="Comedy">Comedy</option>
-        <option value="Fiction">Fiction</option>
-        <option value="Thriller">Thriller</option>
-        <option value="Fantasy">Fantasy</option>
-        <option value="Mystery">Mystery</option>
-        <option value="Self-help">Self-help</option>
-      </select>
+      <input
+        type="text"
+        name="author"
+        id="author"
+        placeholder="Author"
+        value={book.author}
+        onChange={handleChange}
+      />
       <input
         type="submit"
         value="ADD BOOK"
