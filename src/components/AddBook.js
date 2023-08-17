@@ -15,7 +15,6 @@ const AddBook = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(`${book.bookTitle} ${book.author}`);
   };
 
   return (
