@@ -11,6 +11,7 @@ const Header = () => (
         <Link to="/categories">CATEGORIES</Link>
       </li>
     </ul>
+    <div>icon</div>
   </header>
 );
 
