@@ -1,38 +1,30 @@
+import { useSelector } from 'react-redux';
 import AddBook from './AddBook';
 import Book from './Book';
 
-const Books = () => (
-  <>
-    <section className="book-list-container">
-      <ul>
-        <li>
-          <Book
-            bookTitle="The Hunger Games"
-            author="Suzanne Collins"
-            progress="68"
-            page="Chapter 17"
-          />
-        </li>
-        <li>
-          <Book
-            bookTitle="Dune"
-            author="Frank Herbert"
-            progress="8"
-            page='Chapter 3: "A Lesson Learned"'
-          />
-        </li>
-        <li>
-          <Book
-            bookTitle="Capital in the Twenty-First Century"
-            author="Suzanne Collins"
-            progress="0"
-            page="Introduction"
-          />
-        </li>
-      </ul>
-    </section>
-    <AddBook />
-  </>
-);
+const Books = () => {
+  const books = useSelector((store) => store.book.books);
+
+  return (
+    <>
+      <section className="book-list-container">
+        <ul>
+          {books.map((book) => (
+            <li key={book.item_id}>
+              <Book
+                category={book.category}
+                title={book.title}
+                author={book.author}
+                progress="68"
+                page="Chapter 17"
+              />
+            </li>
+          ))}
+        </ul>
+      </section>
+      <AddBook />
+    </>
+  );
+};
 
 export default Books;
