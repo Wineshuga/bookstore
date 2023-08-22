@@ -19,7 +19,9 @@ const AddBook = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addBook({ title: book.bookTitle, author: book.author }));
+    dispatch(addBook({
+      item_id: String(Math.floor(Math.random() * 100)), title: book.bookTitle, author: book.author,
+    }));
     setBook({
       bookTitle: '',
       author: '',
