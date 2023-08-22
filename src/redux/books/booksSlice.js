@@ -31,13 +31,15 @@ const booksSlice = createSlice({
       state.books = [
         ...state.books,
         {
-          id: Math.floor(Math.random() * 100),
+          item_id: action.payload.item_id,
           title: action.payload.title,
           author: action.payload.author,
         },
       ];
     },
-    removeBook: (state, { payload }) => [...state].filter((item) => item.id !== payload),
+    removeBook: (state, { payload }) => {
+      state.books = state.books.filter((item) => item.item_id !== payload.item_id);
+    },
   },
 });
 

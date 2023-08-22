@@ -12,6 +12,7 @@ const Books = () => {
           {books.map((book) => (
             <li key={book.item_id}>
               <Book
+                id={book.item_id}
                 category={book.category}
                 title={book.title}
                 author={book.author}
