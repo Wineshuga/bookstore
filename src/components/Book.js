@@ -3,13 +3,13 @@ import BookBtn from './BookBtn';
 import CurrChapter from './CurrChapter';
 
 const Book = ({
-  bookTitle, author, progress, page,
+  category, title, author, progress, page,
 }) => (
   <section className="book-container">
     <section className="book-details-section">
       <div className="book-name">
-        <h4>Action</h4>
-        <h3>{bookTitle}</h3>
+        <h4>{category}</h4>
+        <h3>{title}</h3>
         <p>{author}</p>
       </div>
       <div className="book-buttons">
@@ -36,8 +36,9 @@ const Book = ({
 );
 
 Book.propTypes = {
-  bookTitle: PropTypes.string.isRequired,
   author: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
   progress: PropTypes.string.isRequired,
   page: PropTypes.string.isRequired,
 };
