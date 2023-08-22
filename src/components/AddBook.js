@@ -1,6 +1,10 @@
 import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addBook } from '../redux/books/booksSlice';
 
 const AddBook = () => {
+  const dispatch = useDispatch();
+
   const [book, setBook] = useState({
     bookTitle: '',
     author: '',
@@ -15,10 +19,15 @@ const AddBook = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    dispatch(addBook({ title: book.bookTitle, author: book.author }));
+    setBook({
+      bookTitle: '',
+      author: '',
+    });
   };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <h3>ADD NEW BOOK</h3>
       <input
         type="text"
@@ -39,7 +48,6 @@ const AddBook = () => {
       <input
         type="submit"
         value="ADD BOOK"
-        onClick={handleSubmit}
       />
     </form>
   );
