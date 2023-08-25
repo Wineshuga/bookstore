@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
-import { addBook } from '../redux/books/booksSlice';
+import { nanoid } from '@reduxjs/toolkit';
+import { postBooks } from '../redux/books/booksSlice';
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -19,9 +20,11 @@ const AddBook = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(addBook({
-      item_id: String(Math.floor(Math.random() * 100)), title: book.bookTitle, author: book.author,
-    }));
+    if (book.bookTitle.trim() && book.author.trim()) {
+      dispatch(postBooks({
+        item_id: nanoid(), title: book.bookTitle, author: book.author, category: 'Fiction',
+      }));
+    }
     setBook({
       bookTitle: '',
       author: '',
@@ -38,6 +41,7 @@ const AddBook = () => {
         placeholder="Book title"
         value={book.bookTitle}
         onChange={handleChange}
+        required
       />
       <input
         type="text"
@@ -46,6 +50,7 @@ const AddBook = () => {
         placeholder="Author"
         value={book.author}
         onChange={handleChange}
+        required
       />
       <input
         type="submit"

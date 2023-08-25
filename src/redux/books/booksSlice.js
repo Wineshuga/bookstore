@@ -1,21 +1,31 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-const baseUrl = 'https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi';
+const uniqueId = 'DmsZz2yR41rVIX7oJeNz';
+const baseUrl = `https://us-central1-bookstore-api-e63c8.cloudfunctions.net/bookstoreApi/apps/${uniqueId}`;
 
 const initialState = {
   books: [],
   status: 'idle',
 };
 
-const uniqueId = 'Q24mTCpWL67XWehatjxC';
-
-export const fetchBooks = createAsyncThunk('type/fetchBooks', async () => {
+export const fetchBooks = createAsyncThunk('type/fetchBooks', async (_, thunkAPI) => {
   try {
-    const response = await axios.get(`${baseUrl}/apps/${uniqueId}/books`);
+    const response = await axios.get(`${baseUrl}/books`);
+    const { data } = response;
+    return data;
+  } catch (err) {
+    return thunkAPI.rejectWithValue(err);
+  }
+});
+
+export const postBooks = createAsyncThunk('type/postBooks', async (data, thunkAPI) => {
+  try {
+    const response = await axios.post(`${baseUrl}/books`, data);
+    thunkAPI.dispatch(fetchBooks());
     return response.data;
   } catch (err) {
-    return err;
+    return thunkAPI.rejectWithValue(err);
   }
 });
 
@@ -23,16 +33,6 @@ const booksSlice = createSlice({
   name: 'book',
   initialState,
   reducers: {
-    addBook: (state, action) => {
-      state.books = [
-        ...state.books,
-        {
-          item_id: action.payload.item_id,
-          title: action.payload.title,
-          author: action.payload.author,
-        },
-      ];
-    },
     removeBook: (state, { payload }) => {
       state.books = state.books.filter((item) => item.item_id !== payload.item_id);
     },
@@ -53,5 +53,5 @@ const booksSlice = createSlice({
   },
 });
 
-export const { addBook, removeBook } = booksSlice.actions;
+export const { removeBook } = booksSlice.actions;
 export default booksSlice.reducer;

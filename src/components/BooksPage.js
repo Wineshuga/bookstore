@@ -10,10 +10,8 @@ const Books = () => {
   const books = useSelector((store) => store.book.books);
 
   useEffect(() => {
-    if (mainBook.status === 'idle') {
-      dispatch(fetchBooks());
-    }
-  }, [dispatch, mainBook.status]);
+    dispatch(fetchBooks());
+  }, [dispatch]);
 
   let content;
   if (mainBook.status === 'Loading') {
