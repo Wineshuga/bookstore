@@ -1,5 +1,7 @@
+import styles from '../styles/categories.module.css';
+
 const Categories = () => (
-  <div>Categories</div>
+  <div className={styles.categories}>Under Construction</div>
 );
 
 export default Categories;

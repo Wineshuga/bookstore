@@ -1,0 +1,10 @@
+.categories {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #fff;
+  font-size: 2rem;
+  max-width: 71rem;
+  margin: 1rem auto;
+  padding: 2rem;
+  height: 10rem;
+  text-align: center;
+}
