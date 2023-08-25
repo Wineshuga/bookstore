@@ -37,6 +37,7 @@ const Book = ({
             </p>
             <p>completed</p>
           </div>
+          <div className={styles.border_line} />
         </section>
       </section>
       <>

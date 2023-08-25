@@ -1,7 +1,7 @@
 .book_container {
   background-color: #ffffff;
   margin: 1rem auto;
-  width: 95%;
+  max-width: 75rem;
   padding: 2rem;
   display: flex;
   justify-content: space-between;
@@ -11,7 +11,7 @@
 .book_details_section {
   display: flex;
   justify-content: space-between;
-  width: 70%;
+  width: 80%;
 }
 
 .book_name > h3 {
@@ -54,4 +54,11 @@
 
 .progress_status p:first-child{
   font-size: 2rem;
+}
+
+.border_line {
+  margin-left: 5rem;
+  width: 0.1rem;
+  height: 5rem;
+  background-color: #e8e8e8;
 }
