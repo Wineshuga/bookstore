@@ -34,6 +34,7 @@ const AddBook = () => {
 
   return (
     <form className={styles.form} onSubmit={handleSubmit}>
+      <hr />
       <h3>ADD NEW BOOK</h3>
       <fieldset>
         <input

@@ -1,9 +1,10 @@
 .form {
   width: 95%;
-  margin: 5rem auto;
+  margin: 3rem auto 5rem auto;
 }
 
 .form h3 {
+  margin-top: 3rem;
   font-family: 'Montserrat';  
   font-size: 1.25rem;
   color: #888;
