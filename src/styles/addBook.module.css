@@ -5,11 +5,12 @@
 
 .form h3 {
   margin-top: 3rem;
-  font-family: 'Montserrat';  
+  font-family: 'Montserrat', sans-serif;
   font-size: 1.25rem;
   color: #888;
 }
-.form > fieldset{
+
+.form > fieldset {
   border: none;
   margin: 1rem 0;
   display: flex;
@@ -17,10 +18,10 @@
 }
 
 .form input[type=text] {
-  padding: 1rem;  
-  border-radius: 4px;  
-  border: 1px solid #e8e8e8;  
-  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #e8e8e8;
+  background-color: #fff;
 }
 
 .form input[type=text]:first-child {
@@ -33,10 +34,9 @@
   border: none;
   border-radius: 3px;
   background-color: #0290ff;
-  color: #ffffff;
+  color: #fff;
 }
 
 .form input[type=text]:nth-child(2) {
   width: 17.813rem;
 }
- 
