@@ -8,10 +8,19 @@
   text-decoration: none;
 }
 
+body {
+  background-color: rgba(0, 0, 0, 0.05)
+  ;
+}
+
 h1 {
   font-family: 'Montserrat', sans-serif;
 }
 
 h2 {
   font-family: 'Roboto Slab', serif;
+}
+
+.primary-color {
+  color: #0290ff;
 }
