@@ -1,0 +1,24 @@
+.current_section h3{
+  opacity: 0.5;  
+  font-size: 0.813rem;  
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+
+.current_section p {
+  font-family: 'Roboto Slab';  
+  font-size: 1rem;  
+  font-weight: 300;
+  margin-bottom: 0.5rem;
+}
+.update_btn {
+  background-color: #0290ff;
+  font-family: 'Roboto Slab', serif;  
+  font-size: 0.813rem;  
+  font-weight: 300;
+  color: #ffffff;
+  padding: 0.5rem;
+  border: none;
+  margin-top: 0.5rem;
+  border-radius: 3px;
+}

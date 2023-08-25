@@ -39,9 +39,9 @@ const Book = ({
           </div>
         </section>
       </section>
-      <section>
+      <>
         <CurrChapter page={page} />
-      </section>
+      </>
     </section>
   );
 };
