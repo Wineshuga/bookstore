@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { nanoid } from '@reduxjs/toolkit';
 import { postBooks } from '../redux/books/booksSlice';
+import styles from '../styles/addBook.module.css';
 
 const AddBook = () => {
   const dispatch = useDispatch();
@@ -32,30 +33,32 @@ const AddBook = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       <h3>ADD NEW BOOK</h3>
-      <input
-        type="text"
-        name="bookTitle"
-        id="bookTitle"
-        placeholder="Book title"
-        value={book.bookTitle}
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="text"
-        name="author"
-        id="author"
-        placeholder="Author"
-        value={book.author}
-        onChange={handleChange}
-        required
-      />
-      <input
-        type="submit"
-        value="ADD BOOK"
-      />
+      <fieldset>
+        <input
+          type="text"
+          name="bookTitle"
+          id="bookTitle"
+          placeholder="Book title"
+          value={book.bookTitle}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="text"
+          name="author"
+          id="author"
+          placeholder="Author"
+          value={book.author}
+          onChange={handleChange}
+          required
+        />
+        <input
+          type="submit"
+          value="ADD BOOK"
+        />
+      </fieldset>
     </form>
   );
 };
