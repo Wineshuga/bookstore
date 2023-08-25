@@ -25,11 +25,16 @@
 }
 
 .book_name > p {
-  font-family: 'RobotoSlab', serif;  
+  font-family: 'Roboto Slab', serif;  
   font-size: 0.875rem;  
   font-weight: 300;
   color: #4386bf;
   margin-bottom: 0.5rem;
+}
+
+.book_buttons {
+  display: flex;
+  gap: 2rem;
 }
 
 .progress_circle {

@@ -1,0 +1,8 @@
+.book_btns {
+  border: none;
+  background-color: transparent;
+    font-family: 'Roboto Slab', serif;  
+    font-size: 0.875rem;  
+    font-weight: 300;
+    color: #4386bf;
+  }

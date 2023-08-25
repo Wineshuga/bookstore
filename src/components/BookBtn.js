@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import styles from '../styles/bookBtn.module.css';
 
 const BookBtn = ({ click, btnName }) => (
-  <button onClick={click} type="button">{ btnName }</button>
+  <button className={styles.book_btns} onClick={click} type="button">{ btnName }</button>
 );
 
 BookBtn.propTypes = {
