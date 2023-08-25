@@ -29,14 +29,20 @@ export const postBooks = createAsyncThunk('type/postBooks', async (data, thunkAP
   }
 });
 
+export const deleteBooks = createAsyncThunk('type/deleteBooks', async (id, thunkAPI) => {
+  try {
+    const response = await axios.delete(`${baseUrl}/books/${id}`, JSON.stringify({ item_id: id }));
+    thunkAPI.dispatch(fetchBooks());
+    return response.data;
+  } catch (err) {
+    return thunkAPI.rejectWithValue(err);
+  }
+});
+
 const booksSlice = createSlice({
   name: 'book',
   initialState,
-  reducers: {
-    removeBook: (state, { payload }) => {
-      state.books = state.books.filter((item) => item.item_id !== payload.item_id);
-    },
-  },
+  reducers: {},
   extraReducers(builder) {
     builder
       .addCase(fetchBooks.pending, (state) => {
@@ -53,5 +59,4 @@ const booksSlice = createSlice({
   },
 });
 
-export const { removeBook } = booksSlice.actions;
 export default booksSlice.reducer;

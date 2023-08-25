@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
 import BookBtn from './BookBtn';
 import CurrChapter from './CurrChapter';
-import { removeBook } from '../redux/books/booksSlice';
+import { deleteBooks } from '../redux/books/booksSlice';
 
 const Book = ({
   id, category, title, author, progress, page,
@@ -20,7 +20,7 @@ const Book = ({
         <div className="book-buttons">
           <BookBtn btnName="Comments" />
           <BookBtn
-            click={() => dispatch(removeBook({ item_id: id }))}
+            click={() => dispatch(deleteBooks(id))}
             btnName="Remove"
           />
           <BookBtn btnName="Edit" />
