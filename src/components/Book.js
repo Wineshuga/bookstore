@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import BookBtn from './BookBtn';
 import CurrChapter from './CurrChapter';
 import { deleteBooks } from '../redux/books/booksSlice';
+import styles from '../styles/book.module.css';
 
 const Book = ({
   id, category, title, author, progress, page,
@@ -10,32 +11,33 @@ const Book = ({
   const dispatch = useDispatch();
 
   return (
-    <section className="book-container">
-      <section className="book-details-section">
-        <div className="book-name">
+    <section className={styles.book_container}>
+      <section className={styles.book_details_section}>
+        <div className={styles.book_name}>
           <h4>{category}</h4>
           <h3>{title}</h3>
           <p>{author}</p>
+          <div className={styles.book_buttons}>
+            <BookBtn btnName="Comments" />
+            <BookBtn
+              click={() => dispatch(deleteBooks(id))}
+              btnName="Remove"
+            />
+            <BookBtn btnName="Edit" />
+          </div>
+
         </div>
-        <div className="book-buttons">
-          <BookBtn btnName="Comments" />
-          <BookBtn
-            click={() => dispatch(deleteBooks(id))}
-            btnName="Remove"
-          />
-          <BookBtn btnName="Edit" />
-        </div>
-      </section>
-      <section>
-        <div className="progress-circle">
-          progress circle
-        </div>
-        <div>
-          <p>
-            {progress}
-            % completed
-          </p>
-        </div>
+        <section className={styles.progress_section}>
+          <div className={styles.progress_circle} />
+          <div className={styles.progress_status}>
+            <p>
+              {progress}
+              %
+              {' '}
+            </p>
+            <p>completed</p>
+          </div>
+        </section>
       </section>
       <section>
         <CurrChapter page={page} />

@@ -1,0 +1,52 @@
+.book_container {
+  background-color: #ffffff;
+  margin: 1rem auto;
+  width: 95%;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.book_details_section {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
+
+.book_name > h3 {
+  font-size: 1.375rem;
+  margin: 0.5rem 0;
+}
+.book_name > h4, .progress_status p:last-child {
+  opacity: 0.5;  
+  font-family: 'Montserrat', sans-serif;  
+  font-size: 0.875rem;
+}
+
+.book_name > p {
+  font-family: 'RobotoSlab', serif;  
+  font-size: 0.875rem;  
+  font-weight: 300;
+  color: #4386bf;
+  margin-bottom: 0.5rem;
+}
+
+.progress_circle {
+  border-radius: 50%;    
+  width: 4.25rem;    
+  height: 4.25rem;    
+  border: 5px solid #307bbe;
+  border-left-color:#e8e8e8;
+  transform: rotate(45deg);
+}
+
+.progress_section {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.progress_status p:first-child{
+  font-size: 2rem;
+}
