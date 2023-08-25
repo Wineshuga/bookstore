@@ -4,6 +4,7 @@ import {
 import BooksPage from './components/BooksPage';
 import Categories from './components/Categories';
 import Header from './components/Header';
+import './styles/App.css';
 
 const Layout = () => (
   <>
